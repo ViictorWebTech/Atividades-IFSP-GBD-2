@@ -90,5 +90,62 @@ ON p.codcat = c.codcat
 WHERE p.nomeprod = 'Feijão Tia Maria';
 
 --c)
+SELECT p.nomeprod, p.preco
+FROM Produtos p
+WHERE p.preco > 3.0;
 
-	
+--d)
+SELECT p.nomeprod, c.descricacao, p.preco
+FROM Produtos p INNER JOIN Categorias c
+ON p.codcat = c.codcat
+WHERE p.preco < 5;
+
+--e)
+SELECT c.descricacao, p.nomeprod, p.preco
+FROM Produtos p INNER JOIN Categorias c
+ON p.codcat = c.codcat
+WHERE p.nomeprod = 'Bombom Dobhom';
+
+--g)
+SELECT c.descricacao, p.nomeprod
+FROM Produtos p INNER JOIN Categorias c
+ON p.codcat = c.codcat
+WHERE p.nomeprod = 'Coca-Cola';
+
+--h)
+SELECT c.descricacao
+FROM Categorias c;
+
+--i)
+SELECT f.codfor, f.fornecedor, p.nomeprod
+FROM Produtos p INNER JOIN Categorias c
+ON p.codcat = c.codcat INNER JOIN Fornecedores f
+ON f.codfor = c.codfor
+WHERE p.nomeprod = 'Coco da Bahia';
+
+--j)
+SELECT sum(preco) AS "Custo Total"
+FROM Produtos;
+
+--k)
+SELECT f.fornecedor, p.nomeprod
+FROM Produtos p INNER JOIN Categorias c
+ON p.codcat = c.codcat INNER JOIN Fornecedores f
+ON f.codfor = c.codfor
+WHERE p.nomeprod = 'Batata';
+
+--l)
+SELECT f.fornecedor, p.nomeprod
+FROM Produtos p INNER JOIN Categorias c
+ON p.codcat = c.codcat INNER JOIN Fornecedores f
+ON f.codfor = c.codfor
+WHERE p.nomeprod = 'Sabonete';
+
+--m)
+SELECT p.preco, p.nomeprod, f.fornecedor
+FROM Produtos p INNER JOIN Categorias c
+ON p.codcat = c.codcat INNER JOIN Fornecedores f
+ON f.codfor = c.codfor
+WHERE f.fornecedor = 'Fhrescou';
+
+
